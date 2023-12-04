@@ -83,7 +83,7 @@ defmodule PlugHmacAuth do
   """
   @spec gen_signature(String.t(), String.t(), atom()) :: String.t()
   def gen_signature(payload, secret_key, hmac_hash_algo),
-    do: :crypto.hmac(hmac_hash_algo, secret_key, payload) |> Base.encode64()
+    do: :crypto.mac(:hmac, hmac_hash_algo, secret_key, payload) |> Base.encode64()
 
   @doc """
   Returns the first token from http request header by specific key.
