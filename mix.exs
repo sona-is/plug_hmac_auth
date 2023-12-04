@@ -9,7 +9,7 @@ defmodule PlugHmacAuth.MixProject do
     [
       app: :plug_hmac_auth,
       version: @version,
-      elixir: "~> 1.10",
+      elixir: "~> 1.14",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
